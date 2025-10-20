@@ -15,13 +15,13 @@ jobs:
       - name: Setup Supabase CLI
         uses: supabase/setup-cli@v1
         with:
-          version: latest
+          version: v2   # or 'latest'
 
-- name: Login to Supabase
-  run: supabase login --token "${{ secrets.SUPABASE_ACCESS_TOKEN }}" --no-browser
+      - name: Login to Supabase
+        run: supabase login --token "${{ secrets.SUPABASE_ACCESS_TOKEN }}" --no-browser
 
-- name: Link project
-  run: supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_REF }}
+      - name: Link project
+        run: supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_REF }}
 
       # Push migrations when you push to main
       - name: Deploy migrations
