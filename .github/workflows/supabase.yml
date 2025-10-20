@@ -15,7 +15,7 @@ jobs:
       - name: Setup Supabase CLI
         uses: supabase/setup-cli@v1
         with:
-          version: v2   # or 'latest'
+          version: latest
 
       - name: Login to Supabase
         run: supabase login --token "${{ secrets.SUPABASE_ACCESS_TOKEN }}" --no-browser
